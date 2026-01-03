@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+    <!-- Large Outer Circle: Container -->
+    <circle cx="64" cy="64" r="60" fill="#ffffff" stroke="black" stroke-width="4"/>
+
+    <!-- Arrows Group -->
+    <!-- Pushed arrows outward (approx 12px gap from center dot) -->
+    <g fill="#f0f0f0" stroke="black" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+        <!-- Up Arrow (Base at y=42, Tip at y=18) -->
+        <path d="M64 18 L80 42 H48 Z" />
+
+        <!-- Down Arrow (Base at y=86, Tip at y=110) -->
+        <path d="M64 110 L80 86 H48 Z" />
+
+        <!-- Left Arrow (Base at x=42, Tip at x=18) -->
+        <path d="M18 64 L42 48 V80 Z" />
+
+        <!-- Right Arrow (Base at x=86, Tip at x=110) -->
+        <path d="M110 64 L86 48 V80 Z" />
+    </g>
+
+    <!-- Small Center Circle -->
+    <!-- Reduced radius slightly to 11 to enhance spacing effect -->
+    <circle cx="64" cy="64" r="11" fill="#ff6600" stroke="black" stroke-width="3"/>
+</svg>

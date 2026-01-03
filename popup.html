@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 250px;
+      padding: 15px;
+      font-family: sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 16px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 8px;
+    }
+
+    .control-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .range-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    input[type=range] {
+      flex-grow: 1;
+    }
+
+    #sensitivity-value {
+      font-size: 12px;
+      min-width: 25px;
+      text-align: right;
+    }
+
+    .note {
+      font-size: 11px;
+      color: #666;
+      margin-top: 10px;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Autoscroll Settings</h2>
+
+  <div class="control-group">
+    <label for="sensitivity">Scroll Sensitivity</label>
+    <div class="range-container">
+      <input type="range" id="sensitivity" min="1" max="100" value="30">
+      <span id="sensitivity-value">30</span>
+    </div>
+    <div class="note">Higher = Faster scrolling</div>
+  </div>
+
+  <div class="control-group">
+    <label>Activation Mode</label>
+    <div style="margin-top: 5px;">
+      <div style="margin-bottom: 5px;">
+        <input type="radio" id="mode-toggle" name="activation-mode" value="toggle" checked>
+        <label for="mode-toggle" style="display: inline; font-weight: normal;">Click to Toggle</label>
+      </div>
+      <div>
+        <input type="radio" id="mode-hold" name="activation-mode" value="hold">
+        <label for="mode-hold" style="display: inline; font-weight: normal;">Hold to Scroll</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label>Blacklisted Domains</label>
+    <div style="display: flex; gap: 5px; margin-bottom: 10px;">
+      <input type="text" id="new-domain" placeholder="example.com" style="flex-grow: 1; padding: 4px;">
+      <button id="add-domain" style="cursor: pointer;">Add</button>
+    </div>
+    <ul id="blacklist"
+      style="list-style: none; padding: 0; margin: 0; max-height: 150px; overflow-y: auto; border: 1px solid #ddd; border-radius: 4px;">
+      <!-- List items will be added here dynamically -->
+    </ul>
+    <div class="note">Extension will be disabled on these sites.</div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+/* The overlay that appears at the clicked origin point */
+#autoscroll-origin-icon {
+position: fixed;
+z-index: 2147483647; /* Max Z-Index to sit on top of everything */
+width: 30px;
+height: 30px;
+background-color: rgba(0, 0, 0, 0.7);
+border-radius: 50%;
+border: 2px solid white;
+pointer-events: none; /* Let mouse events pass through to document */
+transform: translate(-50%, -50%); /* Center on coordinates */
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 0 4px rgba(0,0,0,0.5);
+}
+
+/* The inner arrows using CSS borders/shapes or SVG background */
+#autoscroll-origin-icon::after {
+content: '';
+width: 16px;
+height: 16px;
+background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 16 16"><path d="M8 0l4 4H9v3h3V4l4 4-4 4v-3H9v3h3l-4 4-4-4h3v-3H4v3L0 8l4-4v3h3V4H4z"/></svg>');
+background-repeat: no-repeat;
+background-position: center;
+}
+
+/* When scrolling is active, force the cursor on the whole page */
+body.autoscrolling {
+    cursor: all-scroll !important;
+    user-select: none !important; /* Prevent text selection while scrolling */
+}
