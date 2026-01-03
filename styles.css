@@ -26,7 +26,16 @@ background-position: center;
 }
 
 /* When scrolling is active, force the cursor on the whole page */
-body.autoscrolling {
+body.autoscrolling,
+html.autoscrolling {
     cursor: all-scroll !important;
     user-select: none !important; /* Prevent text selection while scrolling */
+    scroll-behavior: auto !important; /* Disable smooth scrolling which fights with JS-driven scrolling */
+}
+
+/* Also disable smooth scroll and snap on all children during autoscroll */
+body.autoscrolling *,
+html.autoscrolling * {
+    scroll-behavior: auto !important;
+    scroll-snap-type: none !important;
 }

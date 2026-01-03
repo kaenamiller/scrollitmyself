@@ -152,6 +152,7 @@
         // DETECT TARGET: Find which element should scroll
         activeScrollTarget = getScrollParent(e.target);
 
+        document.documentElement.classList.add('autoscrolling');
         document.body.classList.add('autoscrolling');
 
         originIcon = createIcon();
@@ -176,6 +177,7 @@
             originIcon.remove();
             originIcon = null;
         }
+        document.documentElement.classList.remove('autoscrolling');
         document.body.classList.remove('autoscrolling');
     }
 
